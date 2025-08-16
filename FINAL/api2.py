@@ -23,16 +23,3 @@ def receive_emoji():
         return jsonify({'status': 'success'}), 200
     else:
         return jsonify({'status': 'error'}), 500
-
-@app.route('/register', methods=['POST'])
-def register_client():
-    client_id = request.json.get('client_id')
-    subscriber_id = request.json.get('subscriber_id')
-    logger.info(f"Registered client {client_id} with subscriber {subscriber_id}")
-    return jsonify({"message": "Client registered successfully"}), 200
-
-@app.route('/deregister', methods=['POST'])
-def deregister_client():
-    client_id = request.json.get('client_id')
-    logger.info(f"Deregistered client {client_id}")
-    return jsonify({"message": "Client deregistered successfully"}), 200
