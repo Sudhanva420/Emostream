@@ -11,9 +11,9 @@ logger = logging.getLogger(__name__)
 # The WebSocket endpoints
 
 subscribers = {
-    'cluster1': ['ws://localhost:5002/sub1', 'ws://localhost:5002/sub2'],
-    'cluster2': ['ws://localhost:5003/sub4', 'ws://localhost:5003/sub5'],
-    'cluster3': ['ws://localhost:5004/sub7', 'ws://localhost:5004/sub8']
+    'cluster1': ['ws://localhost:5002', 'ws://localhost:5005'],
+    'cluster2': ['ws://localhost:5003', 'ws://localhost:5006'],
+    'cluster3': ['ws://localhost:5004', 'ws://localhost:5007']
 }
 '''
 subscribers = {
