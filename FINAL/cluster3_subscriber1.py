@@ -10,7 +10,7 @@ logger = logging.getLogger(__name__)
 
 def subscriber():
     # Specific endpoint for this subscriber
-    websocket_url = 'ws://localhost:5004/sub7'
+    websocket_url = 'ws://localhost:5004'
     
     consumer = KafkaConsumer(
         'cluster3-topic-subscribers',
