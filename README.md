@@ -38,6 +38,9 @@ source venv/bin/activate
 pip install -r requirements.txt
 
 ```
+## Project Structure
+
+```
 emoji-event-processing-system/
 │
 ├── src/
@@ -80,6 +83,7 @@ emoji-event-processing-system/
 │
 ├── requirements.txt
 └── README.md
+```
 
 ## Directory Overview
 
