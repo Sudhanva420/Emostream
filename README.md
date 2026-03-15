@@ -38,6 +38,67 @@ source venv/bin/activate
 pip install -r requirements.txt
 
 ```
+emoji-event-processing-system/
+│
+├── src/
+│   ├── api/
+│   │   ├── emoji_api.py
+│   │   └── registration_api.py
+│   │
+│   ├── producers/
+│   │   ├── producer.py
+│   │   ├── main_publisher.py
+│   │   ├── cluster1_publisher.py
+│   │   ├── cluster2_publisher.py
+│   │   └── cluster3_publisher.py
+│   │
+│   ├── subscribers/
+│   │   ├── cluster1_subscriber1.py
+│   │   ├── cluster1_subscriber2.py
+│   │   ├── cluster2_subscriber1.py
+│   │   ├── cluster2_subscriber2.py
+│   │   ├── cluster3_subscriber1.py
+│   │   └── cluster3_subscriber2.py
+│   │
+│   ├── streaming/
+│   │   ├── websocket_server.py
+│   │   └── emoji_aggregator.py
+│   │
+│   ├── client/
+│   │   └── client_simulator.py
+│   │
+│   └── core/
+│       ├── main.py
+│       └── threading_test.py
+│
+├── scripts/
+│   ├── start_subscribers.sh
+│   └── stop_subscribers.sh
+│
+├── deployment/
+│   └── final_deploy
+│
+├── requirements.txt
+└── README.md
+
+## Directory Overview
+
+src/ – Core application code
+
+api/ – REST APIs for registration and emoji aggregation
+
+producers/ – Kafka publishers distributing emoji events
+
+subscribers/ – Kafka consumers forwarding events to WebSocket servers
+
+streaming/ – WebSocket server and streaming logic
+
+client/ – Simulated clients generating emoji events
+
+scripts/ – Helper scripts to start and stop subscriber processes
+
+deployment/ – Deployment configuration files
+
 
 ## Running the System
 
@@ -69,20 +130,20 @@ Run the following components in order, each in a separate terminal:
 
 1. Registration API
  ```bash
-   python registration_api2.py
+   python registration_api.py
    ```
  
 
 2. WebSocket Server
  ```bash
-   python ws_server5.py
+   python websocket_server.py
    ```
 ```bash
-   python main3.py
+   python main.py
    ```
 3. Emoji Processing
  ```bash
-   python emoji12.py
+   python emoji_aggregator.py
    ```
 4. Publishers
 ```bash
@@ -99,7 +160,7 @@ Run the following components in order, each in a separate terminal:
 
 6. Start client simulator(different terminal for each client, with different client id)
 ```bash
-   python client_simulator8.py client_1
+   python client_simulator.py client_1
    ```
 
 ### 3. Monitor Events (Optional)
